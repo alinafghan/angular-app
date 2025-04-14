@@ -5,14 +5,14 @@
         "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "dist/angular-app"
+          "distDir": "dist/angular-app/"
         }
       }
     ],
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "browser/index.html"
+        "destination": "/index.html"
       }
     ]
   }
