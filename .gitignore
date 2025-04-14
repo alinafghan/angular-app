@@ -64,3 +64,4 @@ node_backend/*/site-packages/*/lib/*.dll
 *.pkl
 *.model
 *.tar.gz
+.vercel
