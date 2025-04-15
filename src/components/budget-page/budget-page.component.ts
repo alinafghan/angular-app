@@ -51,7 +51,7 @@ import { environment } from '../../environments/environment';
     allocateBudget() {
       if (!this.totalBudget || this.totalBudget <= 0) return;
   
-      this.http.post<any[]>(`${environment.BACKEND_URL}/ads/getBudget`, {
+      this.http.post<any[]>(`${environment.BACKEND_URL}/budget/getBudget`, {
         campaignId: this.selectedCampaign,
         totalBudget: this.totalBudget
       }).subscribe(
