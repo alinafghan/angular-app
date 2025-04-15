@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-budget-page',
@@ -22,7 +23,7 @@ import { HttpClient } from '@angular/common/http';
     }
   
     fetchCampaigns() {
-      this.http.get<string[]>('http://localhost:3000/ads/getAllCampaigns').subscribe(
+      this.http.get<string[]>(`${environment.BACKEND_URL}/ads/getAllCampaigns`).subscribe(
         (response) => {
           this.campaigns = response;
         },
@@ -36,7 +37,7 @@ import { HttpClient } from '@angular/common/http';
       console.log('Selected campaign:', this.selectedCampaign);
       if (!this.selectedCampaign) return;
   
-      this.http.post<any[]>('http://localhost:3000/ads/getAdsfromCampaign', { campaignId: this.selectedCampaign }).subscribe(
+      this.http.post<any[]>(`${environment.BACKEND_URL}/ads/getAdsfromCampaign`, { campaignId: this.selectedCampaign }).subscribe(
         (response) => {
           this.ads = response;
           this.allocatedBudgets = []; // Reset allocated budgets when new ads are loaded
@@ -50,7 +51,7 @@ import { HttpClient } from '@angular/common/http';
     allocateBudget() {
       if (!this.totalBudget || this.totalBudget <= 0) return;
   
-      this.http.post<any[]>('http://localhost:3000/ads/getBudget', {
+      this.http.post<any[]>(`${environment.BACKEND_URL}/ads/getBudget`, {
         campaignId: this.selectedCampaign,
         totalBudget: this.totalBudget
       }).subscribe(

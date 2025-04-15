@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 // Define the interfaces directly in the service file
 interface TrendInsight {
@@ -38,7 +39,7 @@ interface TrendAnalysisResponse {
   providedIn: 'root',
 })
 export class TrendsService {
-  private apiUrl = 'http://localhost:3000/trends';
+  private apiUrl = `${environment.BACKEND_URL}/trends`;
 
   constructor(private http: HttpClient) {}
 

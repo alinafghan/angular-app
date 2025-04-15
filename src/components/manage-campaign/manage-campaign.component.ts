@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-angular/src/icons';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-manage-campaign',
@@ -24,7 +25,7 @@ export class ManageCampaignComponent implements OnInit {
       }
     
       fetchCampaigns() {
-        this.http.get<string[]>('http://localhost:3000/ads/getAllCampaigns').subscribe(
+        this.http.get<string[]>(`${environment.BACKEND_URL}/ads/getAllCampaigns`).subscribe(
           (response) => {
             this.campaigns = response;
             console.log('Fetched campaigns:', response);

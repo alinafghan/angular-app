@@ -55,6 +55,7 @@ Thumbs.db
 venv/
 env/
 
+
 # Specific large file directories
 node_backend/*/site-packages/*/lib/*.dll
 **/lib/large_binaries/

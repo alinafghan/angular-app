@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-campaign',
@@ -12,7 +13,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class CampaignComponent {
   campaignForm: FormGroup;
-  apiUrl = 'http://localhost:3000/ads/postCampaign';
+  apiUrl = `${environment.BACKEND_URL}/ads/postCampaign`;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.campaignForm = this.fb.group({

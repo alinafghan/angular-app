@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { PlusIcon } from 'lucide-angular';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-selected-campaign',
@@ -27,7 +28,7 @@ export class SelectedCampaignComponent implements OnInit {
 
   fetchCampaignDetails() {
     this.http
-      .get(`http://localhost:3000/ads/getCampaign/${this.campaignId}`)
+      .get(`${environment.BACKEND_URL}/ads/getCampaign/${this.campaignId}`)
       .subscribe({
         next: (response: any) => {
           this.campaign = response.campaign;
@@ -42,7 +43,7 @@ export class SelectedCampaignComponent implements OnInit {
 
   fetchAdsForCampaign() {
     this.http
-      .post<any[]>('http://localhost:3000/ads/getAdsFromCampaign', {
+      .post<any[]>(`${environment.BACKEND_URL}/ads/getAdsFromCampaign`, {
         campaignId: this.campaignId,
       })
       .subscribe({
