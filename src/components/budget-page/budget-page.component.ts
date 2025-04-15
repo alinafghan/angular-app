@@ -56,6 +56,7 @@ import { environment } from '../../environments/environment';
         totalBudget: this.totalBudget
       }).subscribe(
         (response) => {
+          console.log('Allocated budgets:', response);
           this.allocatedBudgets = response;
         },
         (error) => {
