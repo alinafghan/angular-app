@@ -103,9 +103,7 @@
           </div>
         </div>
 
-        <p class="text-gray-400 mb-10">
-          Manage campaign {{ campaign.campaignId }}.
-        </p>
+        <p class="text-gray-400 mb-10">Manage {{ campaign.campaignName }}.</p>
 
         <hr class="border-gray-700 mb-8" />
 
@@ -121,7 +119,7 @@
               >
                 <div class="h-48 bg-gray-200">
                   <img
-                    [src]="ad.imageUrl"
+                    [src]="ad.imageData"
                     alt="Ad preview"
                     class="w-full h-full object-cover"
                   />
