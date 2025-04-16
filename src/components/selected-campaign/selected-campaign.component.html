@@ -127,8 +127,15 @@
                   />
                 </div>
                 <div class="p-4">
-                  <p class="text-sm text-white">{{ ad.caption }}</p>
-                  <p class="text-xs text-gray-400 mt-2">{{ ad.platform }}</p>
+                  <!-- <p class="text-sm text-white">{{ ad.caption }}</p>
+                  <p class="text-xs text-gray-400 mt-2">{{ ad.platform }}</p> -->
+                  <a href="/ad?={{ ad.id }}" class="flex items-center">
+                    <p class="text-sm text-white mr-2">{{ ad.caption }}</p>
+                    <lucide-icon
+                      [img]="penLine"
+                      class="my-icon size-20"
+                    ></lucide-icon>
+                  </a>
                 </div>
               </div>
 
