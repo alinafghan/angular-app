@@ -25,7 +25,10 @@ export class ManageCampaignComponent implements OnInit {
       }
     
       fetchCampaigns() {
-        this.http.get<string[]>(`${environment.BACKEND_URL}/ads/getAllCampaigns`).subscribe(
+        const token = localStorage.getItem('authToken');
+        this.http.get<string[]>(`${environment.BACKEND_URL}/ads/getAllCampaigns`, {
+          headers: { Authorization: `Bearer ${token}` }
+        }).subscribe(
           (response) => {
             this.campaigns = response;
             console.log('Fetched campaigns:', response);
@@ -35,5 +38,4 @@ export class ManageCampaignComponent implements OnInit {
           }
         );
       }
-
 }

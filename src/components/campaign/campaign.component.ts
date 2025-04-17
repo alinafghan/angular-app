@@ -47,7 +47,9 @@ export class CampaignComponent {
       duration
     };
 
-    this.http.post(this.apiUrl, newCampaign).subscribe(
+    this.http.post(this.apiUrl, newCampaign, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('authToken')}` }
+    }).subscribe(
       (response) => {
         console.log('Campaign created:', response);
         alert('Campaign created successfully!');

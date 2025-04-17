@@ -22,3 +22,4 @@ export class AuthService {
       window.location.href = this.fbLoginUrl; // Redirects user to backend for login
     }
 }
+
