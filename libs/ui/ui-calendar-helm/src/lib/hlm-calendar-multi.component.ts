@@ -18,7 +18,7 @@ import {
 import { hlm } from '@spartan-ng/brain/core';
 import { injectDateAdapter } from '@spartan-ng/brain/date-time';
 import { buttonVariants } from '@spartan-ng/ui-button-helm';
-import { HlmIconDirective } from '@spartan-ng/ui-icon-helm';
+import { HlmIconDirective } from '../../../ui-icon-helm/src/index';
 import type { ClassValue } from 'clsx';
 
 @Component({
