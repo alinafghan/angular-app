@@ -3,7 +3,7 @@ import {
   BrnProgressComponent,
   BrnProgressIndicatorComponent,
 } from '@spartan-ng/brain/progress';
-import { HlmProgressIndicatorDirective } from '@spartan-ng/ui-progress-helm';
+import { HlmProgressIndicatorDirective } from '../../../libs/ui/ui-progress-helm/src/index';
 
 @Component({
   selector: 'spartan-progress-preview',

@@ -3,13 +3,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { HlmFormFieldModule } from '@spartan-ng/ui-formfield-helm';
-import { HlmInputDirective } from '@spartan-ng/ui-input-helm';
+import { HlmFormFieldModule } from '../../../libs/ui/ui-formfield-helm/src/index';
+import { HlmInputDirective } from '../../../libs/ui/ui-input-helm/src/index';
 import { BrnSelectImports } from '@spartan-ng/brain/select';
-import { HlmSelectImports } from '@spartan-ng/ui-select-helm';
-import { HlmSelectContentDirective, HlmSelectOptionComponent, HlmSelectValueDirective } from '@spartan-ng/ui-select-helm';
-import { HlmSelectTriggerComponent } from '@spartan-ng/ui-select-helm';
-import { HlmDatePickerComponent } from '@spartan-ng/ui-datepicker-helm';
+import { HlmSelectImports } from '../../../libs/ui/ui-select-helm/src/index';
+import { HlmSelectContentDirective, HlmSelectOptionComponent, HlmSelectValueDirective } from '../../../libs/ui/ui-select-helm/src/index';
+import { HlmSelectTriggerComponent } from '../../../libs/ui/ui-select-helm/src/index';
+import { HlmDatePickerComponent } from '../../../libs/ui/ui-datepicker-helm/src/index';
 
 
 @Component({

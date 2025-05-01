@@ -38,7 +38,7 @@
     "zone.js": "~0.15.0"
   },
   "workspaces": [
-    "libs/*"
+    "libs/ui/*"
   ],
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.6",

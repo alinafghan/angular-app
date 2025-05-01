@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrnSelectImports } from '@spartan-ng/brain/select';
-import { HlmSelectImports } from '@spartan-ng/ui-select-helm';
-import { HlmFormFieldModule } from '@spartan-ng/ui-formfield-helm';
-import { HlmInputDirective } from '@spartan-ng/ui-input-helm';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmSelectImports } from '../../../libs/ui/ui-select-helm/src/index';
+import { HlmFormFieldModule } from '../../../libs/ui/ui-formfield-helm/src/index';
+import { HlmInputDirective } from '../../../libs/ui/ui-input-helm/src/index';
+import { HlmButtonDirective } from '../../../libs/ui/ui-button-helm/src/index';
 
 @Component({
   selector: 'app-budget',
