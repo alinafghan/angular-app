@@ -25,6 +25,10 @@
     "@spartan-ng/ui-button-helm": "^0.0.1-alpha.357",
     "@spartan-ng/ui-core": "^0.0.1-alpha.357",
     "@spartan-ng/ui-icon-helm": "^0.0.1-alpha.357",
+    "@spartan-ng/ui-formfield-helm": "file:libs/ui-formfield-helm",
+    "@spartan-ng/ui-input-helm": "file:libs/ui-input-helm",
+    "@spartan-ng/ui-select-helm": "file:libs/ui-select-helm",
+    "@spartan-ng/ui-datepicker-helm": "file:libs/ui-datepicker-helm",
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -33,6 +37,9 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
+  "workspaces": [
+    "libs/*"
+  ],
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.6",
     "@angular/cli": "^19.0.6",
