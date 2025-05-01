@@ -7,9 +7,9 @@ import { hlm } from '@spartan-ng/brain/core';
 import { BrnDialogState } from '@spartan-ng/brain/dialog';
 import { type ChangeFn, type TouchFn } from '@spartan-ng/brain/forms';
 import { BrnPopoverComponent, BrnPopoverContentDirective, BrnPopoverTriggerDirective } from '@spartan-ng/brain/popover';
-import { HlmCalendarComponent } from '@spartan-ng/ui-calendar-helm';
-import { HlmIconDirective } from '@spartan-ng/ui-icon-helm';
-import { HlmPopoverContentDirective } from '@spartan-ng/ui-popover-helm';
+import { HlmCalendarComponent } from '../../../ui-calendar-helm/src/index';
+import { HlmIconDirective } from '../../../ui-icon-helm/src/index';
+import { HlmPopoverContentDirective } from '../../../ui-popover-helm/src/index';
 import type { ClassValue } from 'clsx';
 import { injectHlmDatePickerConfig } from './hlm-date-picker.token';
 
