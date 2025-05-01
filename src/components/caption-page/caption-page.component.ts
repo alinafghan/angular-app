@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router'; // To get imageId from URL
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { environment } from '../../environments/environment';
+import { AdDataService } from '../../services/ad-data.service';
 
 @Component({
   selector: 'app-caption-page',
@@ -19,17 +19,25 @@ export class CaptionPageComponent implements OnInit {
   caption?: string;
   ad?: any;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute, private adDataService : AdDataService) {}
 
   ngOnInit(): void {
     const imageId = this.route.snapshot.queryParamMap.get('ad');
     if (imageId) {
       this.fetchAdImage(imageId);
     }
+    else{
+      const adImageId = this.adDataService.getAdImageId();
+      if (adImageId) {
+        this.fetchAdImage(adImageId);
+      } else {
+        console.error('No ad image ID found in the URL or service.');
+      }
+    }
   }
 
   fetchAdImage(imageId: string) {
-    this.http.get<any>(`${environment.BACKEND_URL}/adImages/${imageId}`)
+    this.http.get<any>(`http://localhost:3000/adImages/${imageId}`)
       .subscribe(response => {
         this.ad = response;
       }, error => {
@@ -78,7 +86,7 @@ export class CaptionPageComponent implements OnInit {
       caption: this.caption
     };
   
-    this.http.put(`${environment.BACKEND_URL}/adImages/update_caption`, payload)
+    this.http.put('http://localhost:3000/adImages/update_caption', payload)
       .subscribe({
         next: (response) => {
           console.log('Caption saved:', response);

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +11,11 @@ export class FluxService {
   constructor(private http: HttpClient) {}
 
   getAllCampaigns(): Observable<any> {
-    return this.http.get(`${environment.BACKEND_URL}/ads/getAllCampaigns`);
+    return this.http.get('http://localhost:3000/ads/getAllCampaigns');
   }
 
   addImageToCampaign(data: any): Observable<any> {
-    return this.http.post(`${environment.BACKEND_URL}/adImages/add`, data);
+    return this.http.post('http://localhost:3000/adImages/add', data);
   }
 
   generateImage(requestData: any): Observable<any> {
@@ -25,5 +24,12 @@ export class FluxService {
       });
     console.log('Sending request to Flux API:', requestData);
     return this.http.post<any>(this.apiUrl, requestData, { headers });  }
+
+  enhancePrompt(requestData: any): Observable<any> {
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json'
+      });
+    console.log('Sending request to EnhanceFlux API:', requestData);
+    return this.http.post('http://localhost:5000/enhance', requestData, { headers });  }
 
   }

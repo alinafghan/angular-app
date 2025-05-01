@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-angular/src/icons';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-manage-campaign',
@@ -25,10 +24,7 @@ export class ManageCampaignComponent implements OnInit {
       }
     
       fetchCampaigns() {
-        const token = localStorage.getItem('authToken');
-        this.http.get<string[]>(`${environment.BACKEND_URL}/ads/getAllCampaigns`, {
-          headers: { Authorization: `Bearer ${token}` }
-        }).subscribe(
+        this.http.get<string[]>('http://localhost:3000/ads/getAllCampaigns').subscribe(
           (response) => {
             this.campaigns = response;
             console.log('Fetched campaigns:', response);
@@ -38,4 +34,5 @@ export class ManageCampaignComponent implements OnInit {
           }
         );
       }
+
 }
