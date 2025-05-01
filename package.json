@@ -28,7 +28,6 @@
     "@spartan-ng/ui-formfield-helm": "^0.0.1-alpha.357",
     "@spartan-ng/ui-input-helm":"^0.0.1-alpha.357",
     "@spartan-ng/ui-select-helm": "^0.0.1-alpha.357",
-    "@spartan-ng/ui-datepicker-helm":"^0.0.1-alpha.357",
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
